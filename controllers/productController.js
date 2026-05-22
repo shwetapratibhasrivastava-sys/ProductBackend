@@ -60,3 +60,29 @@ export const getAllProduct=async(req,res)=>{
         message:error.meesage
     }
 }
+
+
+export const updateProduct=async(req,res)=>{
+try {
+    const product=await PRODUCT.findByIdAndUpdate(req.params.id,req.body,
+     {
+        new:true
+    })
+    res.json({
+        message:"Product updated successfully",
+        data:product
+    })
+    
+} catch (error) {
+    res.json({
+        message:error.meesage
+    })
+}
+
+
+
+
+
+
+
+}
