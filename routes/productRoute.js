@@ -5,7 +5,7 @@ import { createProduct,getAllProduct,getProduct } from "../controllers/productCo
 const productRoute=express.Router()
 productRoute.post("/",createProduct)
 productRoute.get("/",getProduct)
-productRoute.get("/",getAllProduct)
+productRoute.get("/:id",getAllProduct)
 
 
 export default productRoute
