@@ -78,11 +78,30 @@ try {
         message:error.meesage
     })
 }
+}
 
 
-
+export const deleteProduct=async(req,res)=>{
+   try {
+    const product=await PRODUCT.findByIdAndDelete(req.params.id)
+    res.json({
+        meesage:"User deleted successfully"
+    })
+   } catch (error) {
+      res.json({
+        message:error.meesage
+      })
+   }
 
 
 
 
 }
+
+
+
+
+
+
+
+
