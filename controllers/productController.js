@@ -43,3 +43,20 @@ export const getProduct=async(req,res)=>{
 }
 
 
+
+export const getAllProduct=async(req,res)=>{
+    try {
+        const product=await PRODUCT.findById(req.params.id)
+        if(!product){
+            res.json({
+                message:"Product doesn't exist"
+            })
+        }
+        res.json({
+            message:"Product details",
+            data:product
+        })
+    } catch (error) {
+        message:error.meesage
+    }
+}
